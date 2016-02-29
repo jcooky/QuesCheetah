@@ -1,0 +1,5 @@
+language: python
+
+samples:
+  - id: ApiTestCase.test_create_group_question
+    script: python manage.py test vote.tests.ApiTestCase.test_create_group_question

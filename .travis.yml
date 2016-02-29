@@ -9,10 +9,13 @@ env:
     - BUILD_ON_TRAVIS=true
   matrix:
   - DJANGO_VERSION=1.8.4
-install: "pip install -r requirements.txt"
+install:
+  - "pip install -r requirements.txt"
+  - pip install http://jandy.io/jandy-python.zip
 before_script:
   - mysql -e 'create database travis_ci_db;'
 script:
   - python manage.py makemigrations
   - python manage.py migrate
   - python manage.py test
+  - jandy
